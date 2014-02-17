@@ -1,0 +1,54 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+{% include head.html %}
+</head>
+
+<body class="home" itemscope itemtype="http://schema.org/WebPage">
+
+{% include browser-upgrade.html %}
+
+{% include navigation.html %}
+
+{% if page.image.feature %}<div class="image-wrap">
+  <img src="{{ site.url }}/images/{{ page.image.feature }}" alt="{{ page.title }} feature image" itemprop="primaryImageOfPage">
+  {% if page.image.credit %}<span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>{% endif %}
+</div><!-- /.image-wrap -->{% endif %}
+
+<div class="article-author-top">
+  {% include author-bio.html %}
+</div>
+
+<div id="index" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+ <H2>Message To My Readers</H2>
+ 
+<H4>I have learned a lot of things throughout the years tinkering with my computer, the only thing is I forgot most of it too. The brain is not what it used to be back in the day when I was still a "pup"!</H4>  
+<H4>I don't want to keep doing the same kinds of research I did years ago when I was learning about how to do the stuff I want to do today ... it is just a waste of time. I learned a little Python, I forget it, did a little Java Script and yes I forgot that one too.</H4>  
+<H4>Had a lot of problems trying to get Django on my web host, so much so I abandoned the whole building with Python idea. If I had to do it again for whatever reason, I would have to start from scratch because I forgot everything.</H4> 
+<H4>So this blog is about taking the safe approach and documenting every step and every screen shot (where possible) about not only building Android Apps but also building this blog, none of which is an easy task without a mentor to tell you when you are doing foolishness.</H4> 
+<H4>So to the average person, this is not going to be a "fun blog" but to the person looking for information to fix a problem that they may be having this could prove to be a good blog to bookmark for reference.</H4>
+<H4>It is called "Coding The Novice Way" for a reason. I am not even going to try and learn the "techno speak" or the right terminology in which to guide you on the steps to take. Whatever word comes to my head at the time is what I will be using. So to the expert coders out there ... leave me alone with my terminology, I will be getting the same things accomplished that you do, eventually I may get the terminology right too!</H4>
+<H4>So without further ado please click the article link above to jump into coding the novice way.</H4> 
+  
+  <h3><a href="{{ site.url}}/articles">Most Recent Articles</a></h3>
+  {% for post in site.categories.articles limit:5 %}    
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <h2 itemprop="headline"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}">{{ post.title }}</a></h2>
+    <p itemprop="text">{% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 120 }}{% endif %}</p>
+  </article>
+  {% endfor %}
+</div><!-- /#index -->
+
+<div class="footer-wrap">
+  <footer>
+    {% include footer.html %}
+  </footer>
+</div><!-- /.footer-wrap -->
+
+{% include scripts.html %}
+  
+</body>
+</html>
