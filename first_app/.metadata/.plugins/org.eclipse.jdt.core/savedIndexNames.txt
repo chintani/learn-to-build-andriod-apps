@@ -1,0 +1,6 @@
+INDEX VERSION 1.126+C:\Users\Tania\Documents\github\learn-to-build-andriod-apps\first_app\.metadata\.plugins\org.eclipse.jdt.core
+2835694708.index
+1284074322.index
+3769917695.index
+1437218665.index
+3441175534.index
