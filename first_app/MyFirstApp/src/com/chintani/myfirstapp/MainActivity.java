@@ -13,6 +13,7 @@ import android.content.Intent;
 
 
 public class MainActivity extends ActionBarActivity {
+	public final static String EXTRA_MESSAGE = "com.chintani.myfirstapp.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
