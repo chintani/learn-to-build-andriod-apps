@@ -64,6 +64,7 @@ public class MainActivity extends ActionBarActivity {
 
 /** Called when the user clicks the Send button */
     public void sendMessage(View view) {
+		Intent intent = new Intent(this, DisplayMessageActivity.class);
         // Do something in response to button
     }
 
