@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
+
 public class MainActivity extends ActionBarActivity {
 
     @Override
@@ -59,6 +60,11 @@ public class MainActivity extends ActionBarActivity {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             return rootView;
         }
+    }
+
+/** Called when the user clicks the Send button */
+    public void sendMessage(View view) {
+        // Do something in response to button
     }
 
 }
