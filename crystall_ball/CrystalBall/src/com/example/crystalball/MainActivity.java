@@ -16,14 +16,16 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         
         // Declare our View variables and assign them the Views from the layout file
-        TextView answerLabel = (TextView) findViewById(R.id.textView1);
+        final TextView answerLabel = (TextView) findViewById(R.id.textView1);
         Button getAnswerButton = (Button) findViewById(R.id.button1);
         
         getAnswerButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
+				// The button was clicked, so update the answer label with an answer
+				String answer = "Yes";
+				answerLabel.setText(answer);
 				
 			}
 		});
