@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;answers&apos; in &apos;com.example.crystalball.CrystalBall&apos; to &apos;mAnswers&apos;&#x0D;&#x0A;- Original project: &apos;CrystalBall&apos;&#x0D;&#x0A;- Original element: &apos;com.example.crystalball.CrystalBall.answers&apos;&#x0D;&#x0A;- Renamed element: &apos;com.example.crystalball.CrystalBall.mAnswers&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;answers&apos;" flags="589830" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;com.example.crystalball{CrystalBall.java[CrystalBall^answers" name="mAnswers" references="true" setter="false" stamp="1404876096518" textual="false" version="1.0"/>
+</session>
