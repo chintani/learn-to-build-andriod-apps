@@ -26,6 +26,7 @@ public class MainActivity extends ActionBarActivity {
 			public void onClick(View arg0) {
 				String answer = mCrystalBall.getAnAnswer();
 				
+				
 				// Update the label with or dynamic answer
 				answerLabel.setText(answer);
 				
