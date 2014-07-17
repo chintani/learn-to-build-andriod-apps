@@ -8,6 +8,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.crystalball.MainActivity$PlaceholderFragment" >
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ball01" />
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
