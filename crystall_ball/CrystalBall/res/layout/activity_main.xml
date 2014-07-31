@@ -36,6 +36,12 @@
         android:layout_centerVertical="true"
         android:weightSum="1" >
 
+        <View
+            android:id="@+id/view1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.2" />
+
         <TextView
             android:id="@+id/textView1"
             android:layout_width="0dp"
@@ -46,6 +52,12 @@
             android:shadowRadius="10"
             android:textColorHint="@android:color/white"
             android:textSize="32sp" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.2" />
 
     </LinearLayout>
 
