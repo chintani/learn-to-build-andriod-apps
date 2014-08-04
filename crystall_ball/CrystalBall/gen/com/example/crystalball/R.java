@@ -982,7 +982,31 @@ containing a value of this type.
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
         public static final int ball01=0x7f020057;
-        public static final int ic_launcher=0x7f020058;
+        public static final int ball02=0x7f020058;
+        public static final int ball03=0x7f020059;
+        public static final int ball04=0x7f02005a;
+        public static final int ball05=0x7f02005b;
+        public static final int ball06=0x7f02005c;
+        public static final int ball07=0x7f02005d;
+        public static final int ball08=0x7f02005e;
+        public static final int ball09=0x7f02005f;
+        public static final int ball10=0x7f020060;
+        public static final int ball11=0x7f020061;
+        public static final int ball12=0x7f020062;
+        public static final int ball13=0x7f020063;
+        public static final int ball14=0x7f020064;
+        public static final int ball15=0x7f020065;
+        public static final int ball16=0x7f020066;
+        public static final int ball17=0x7f020067;
+        public static final int ball18=0x7f020068;
+        public static final int ball19=0x7f020069;
+        public static final int ball20=0x7f02006a;
+        public static final int ball21=0x7f02006b;
+        public static final int ball22=0x7f02006c;
+        public static final int ball23=0x7f02006d;
+        public static final int ball24=0x7f02006e;
+        public static final int ball_animation=0x7f02006f;
+        public static final int ic_launcher=0x7f020070;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
