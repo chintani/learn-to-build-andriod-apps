@@ -1,11 +1,13 @@
 package com.example.crystalball;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
@@ -30,10 +32,17 @@ public class MainActivity extends ActionBarActivity {
 				// Update the label with or dynamic answer
 				answerLabel.setText(answer);
 				
+				animateCrystalBall();
 			}
 		});
         
-        
+    }
+    
+    private void animateCrystalBall() {
+    	ImageView crystalBallImage = (ImageView) findViewById(R.id.imageView1);
+    	crystalBallImage.setImageResource(R.drawable.ball_animation);
+    	AnimationDrawable ballAnimation = (AnimationDrawable) crystalBallImage.getDrawable();
+    	ballAnimation.start();
     }
 
 
