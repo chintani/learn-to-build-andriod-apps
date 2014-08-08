@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -57,6 +58,11 @@ public class MainActivity extends ActionBarActivity {
         return true;
     }
 
+    private void animateAnswer() {
+    	AlphaAnimation fadeInAnimation = new AlphaAnimation(0, 1);
+    	fadeInAnimation.setDuration(1500);
+    	fadeInAnimation.setFillAfter(true);
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
