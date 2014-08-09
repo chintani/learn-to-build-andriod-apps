@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 	private CrystalBall mCrystalBall = new CrystalBall();
+	private TextView mAnswerLabel;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +21,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         
         // Declare our View variables and assign them the Views from the layout file
-        final TextView answerLabel = (TextView) findViewById(R.id.textView1);
+        mAnswerLabel = (TextView) findViewById(R.id.textView1);
         Button getAnswerButton = (Button) findViewById(R.id.button1);
         
         getAnswerButton.setOnClickListener(new View.OnClickListener() {
@@ -31,7 +32,7 @@ public class MainActivity extends ActionBarActivity {
 				
 				
 				// Update the label with or dynamic answer
-				answerLabel.setText(answer);
+				mAnswerLabel.setText(answer);
 				
 				animateCrystalBall();
 			}
@@ -50,6 +51,15 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
+    private void animateAnswer() {
+    	AlphaAnimation fadeInAnimation = new AlphaAnimation(0, 1);
+    	fadeInAnimation.setDuration(1500);
+    	fadeInAnimation.setFillAfter(true);
+    	
+    	mAnswerLabel.setAnimation(fadeInAnimation);
+    }
+    
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         
@@ -58,11 +68,7 @@ public class MainActivity extends ActionBarActivity {
         return true;
     }
 
-    private void animateAnswer() {
-    	AlphaAnimation fadeInAnimation = new AlphaAnimation(0, 1);
-    	fadeInAnimation.setDuration(1500);
-    	fadeInAnimation.setFillAfter(true);
-    }
+    
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
