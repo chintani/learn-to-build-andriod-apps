@@ -14,17 +14,20 @@ import android.widget.TextView;
 public class MainActivity extends ActionBarActivity {
 	private CrystalBall mCrystalBall = new CrystalBall();
 	private TextView mAnswerLabel;
+	private Button mGetAnswerButton;
+	private ImageView mCrystalBallImage;
+	
 	
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
         // Declare our View variables and assign them the Views from the layout file
         mAnswerLabel = (TextView) findViewById(R.id.textView1);
-        Button getAnswerButton = (Button) findViewById(R.id.button1);
+        mGetAnswerButton = (Button) findViewById(R.id.button1);
         
-        getAnswerButton.setOnClickListener(new View.OnClickListener() {
+        mGetAnswerButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0) {
@@ -41,9 +44,9 @@ public class MainActivity extends ActionBarActivity {
     }
     
     private void animateCrystalBall() {
-    	ImageView crystalBallImage = (ImageView) findViewById(R.id.imageView1);
-    	crystalBallImage.setImageResource(R.drawable.ball_animation);
-    	AnimationDrawable ballAnimation = (AnimationDrawable) crystalBallImage.getDrawable();
+    	mCrystalBallImage = (ImageView) findViewById(R.id.imageView1);
+    	mCrystalBallImage.setImageResource(R.drawable.ball_animation);
+    	AnimationDrawable ballAnimation = (AnimationDrawable) mCrystalBallImage.getDrawable();
     	if (ballAnimation.isRunning()) {
     		ballAnimation.stop();
     	}
