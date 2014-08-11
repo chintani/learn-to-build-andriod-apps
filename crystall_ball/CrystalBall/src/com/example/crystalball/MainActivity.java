@@ -23,9 +23,10 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        // Declare our View variables and assign them the Views from the layout file
+        // Assign the Views from the layout file
         mAnswerLabel = (TextView) findViewById(R.id.textView1);
         mGetAnswerButton = (Button) findViewById(R.id.button1);
+        mCrystalBallImage = (ImageView) findViewById(R.id.imageView1);
         
         mGetAnswerButton.setOnClickListener(new View.OnClickListener() {
 			
@@ -38,13 +39,14 @@ public class MainActivity extends ActionBarActivity {
 				mAnswerLabel.setText(answer);
 				
 				animateCrystalBall();
+				animateAnswer();				
 			}
 		});
         
     }
     
     private void animateCrystalBall() {
-    	mCrystalBallImage = (ImageView) findViewById(R.id.imageView1);
+    	
     	mCrystalBallImage.setImageResource(R.drawable.ball_animation);
     	AnimationDrawable ballAnimation = (AnimationDrawable) mCrystalBallImage.getDrawable();
     	if (ballAnimation.isRunning()) {
