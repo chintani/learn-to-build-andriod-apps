@@ -4,4 +4,5 @@
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="com.example.crystalball.R.id"/>
 <fullyQualifiedTypeName name="com.example.crystalball.R.drawable"/>
+<fullyQualifiedTypeName name="android.view.animation.AlphaAnimation"/>
 </qualifiedTypeNameHistroy>
