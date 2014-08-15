@@ -1,6 +1,8 @@
 package com.example.crystalball;
 
 import android.graphics.drawable.AnimationDrawable;
+import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -39,7 +41,8 @@ public class MainActivity extends ActionBarActivity {
 				mAnswerLabel.setText(answer);
 				
 				animateCrystalBall();
-				animateAnswer();				
+				animateAnswer();
+				playSound();
 			}
 		});
         
@@ -64,6 +67,18 @@ public class MainActivity extends ActionBarActivity {
     	mAnswerLabel.setAnimation(fadeInAnimation);
     }
     
+    private void playSound() {
+    	MediaPlayer player = MediaPlayer.create(this, R.raw.crystal_ball);
+    	player.start();
+    	player.setOnCompletionListener(new OnCompletionListener() {
+			
+			@Override
+			public void onCompletion(MediaPlayer mp) {
+				mp.release();
+				
+			}
+		});
+    }
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
