@@ -1,50 +1,34 @@
 package com.example.crystalball;
 
 import android.graphics.drawable.AnimationDrawable;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.animation.AlphaAnimation;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 	private CrystalBall mCrystalBall = new CrystalBall();
 	private TextView mAnswerLabel;
-	private Button mGetAnswerButton;
 	private ImageView mCrystalBallImage;
+	private SensorManager mSensorManager;
+	private Sensor mAccelerometer;
+	private ShakeDetector mShakeDetector;
 	
-	
-    @Override
+	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
         // Assign the Views from the layout file
         mAnswerLabel = (TextView) findViewById(R.id.textView1);
-        mGetAnswerButton = (Button) findViewById(R.id.button1);
         mCrystalBallImage = (ImageView) findViewById(R.id.imageView1);
-        
-        mGetAnswerButton.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				String answer = mCrystalBall.getAnAnswer();
-				
-				
-				// Update the label with or dynamic answer
-				mAnswerLabel.setText(answer);
-				
-				animateCrystalBall();
-				animateAnswer();
-				playSound();
-			}
-		});
         
     }
     
@@ -100,5 +84,17 @@ public class MainActivity extends ActionBarActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+	private void handleNewAnswer() {
+		String answer = mCrystalBall.getAnAnswer();
+		
+		
+		// Update the label with or dynamic answer
+		mAnswerLabel.setText(answer);
+		
+		animateCrystalBall();
+		animateAnswer();
+		playSound();
+	}
     
 }
