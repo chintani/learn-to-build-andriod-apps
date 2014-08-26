@@ -13,8 +13,6 @@ import android.view.animation.AlphaAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.crystalball.ShakeDetector.OnShakeListener;
-
 public class MainActivity extends ActionBarActivity {
 	private CrystalBall mCrystalBall = new CrystalBall();
 	private TextView mAnswerLabel;
@@ -31,17 +29,6 @@ public class MainActivity extends ActionBarActivity {
         // Assign the Views from the layout file
         mAnswerLabel = (TextView) findViewById(R.id.textView1);
         mCrystalBallImage = (ImageView) findViewById(R.id.imageView1);
-        
-        mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        mShakeDetector = new ShakeDetector(new OnShakeListener() {
-			
-			@Override
-			public void onShake() {
-				handleNewAnswer();
-				
-			}
-		});
         
     }
     
