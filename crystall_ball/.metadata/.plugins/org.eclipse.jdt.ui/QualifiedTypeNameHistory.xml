@@ -8,4 +8,5 @@
 <fullyQualifiedTypeName name="android.media.MediaPlayer"/>
 <fullyQualifiedTypeName name="com.example.crystalball.R.raw"/>
 <fullyQualifiedTypeName name="android.media.MediaPlayer.OnCompletionListener"/>
+<fullyQualifiedTypeName name="com.example.crystalball.ShakeDetector.OnShakeListener"/>
 </qualifiedTypeNameHistroy>
