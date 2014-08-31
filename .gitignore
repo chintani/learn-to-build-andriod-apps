@@ -4,7 +4,6 @@ fun_facts/FunFacts/.gitignore
 first_app/.idea/
 fun_facts/FunFacts/.gitignore
 fun_facts/FunFacts/FunFacts.iml
-fun_facts/FunFacts/app/
 fun_facts/FunFacts/build.gradle
 fun_facts/FunFacts/gradle.properties
 fun_facts/FunFacts/gradle/
