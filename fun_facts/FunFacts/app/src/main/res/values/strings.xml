@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Fun Facts</string>
-    <string name="did_you_know">Did You Know This?</string>
+    <string name="did_you_know">Did You Know?</string>
     <string name="action_settings">Settings</string>
 
 </resources>
