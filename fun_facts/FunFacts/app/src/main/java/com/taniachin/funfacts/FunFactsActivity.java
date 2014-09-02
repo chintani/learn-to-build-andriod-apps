@@ -12,6 +12,10 @@ public class FunFactsActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fun_facts);
+
+        // Declare our view variables and assign the View from the layout file
+        TextView factLabel = findViewById(R.id.factTextView);
+        Button showFactButton;
     }
 
 
