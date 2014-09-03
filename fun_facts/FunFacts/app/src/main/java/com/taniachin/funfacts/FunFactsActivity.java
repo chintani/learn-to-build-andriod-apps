@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class FunFactsActivity extends Activity {
@@ -15,7 +16,18 @@ public class FunFactsActivity extends Activity {
 
         // Declare our view variables and assign the View from the layout file
         TextView factLabel = (TextView) findViewById(R.id.factTextView);
-        Button showFactButton;
+        Button showFactButton = findViewById(R.id.showFactbutton);
+
+        View.OnClickListener listener = new View.OnClickListener(); {
+            @Override
+            public void onClick(View view) {
+
+            }
+        }
+
+
+
+        showFactButton.setOnClickListener();
     }
 
 
