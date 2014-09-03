@@ -14,7 +14,7 @@ public class FunFactsActivity extends Activity {
         setContentView(R.layout.activity_fun_facts);
 
         // Declare our view variables and assign the View from the layout file
-        TextView factLabel = findViewById(R.id.factTextView);
+        TextView factLabel = (TextView) findViewById(R.id.factTextView);
         Button showFactButton;
     }
 
