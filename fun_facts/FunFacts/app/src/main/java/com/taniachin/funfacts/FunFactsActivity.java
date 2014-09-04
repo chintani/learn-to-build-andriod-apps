@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
-//import android.view.View;
+import android.view.View;
 
 
 public class FunFactsActivity extends Activity {
@@ -25,11 +25,11 @@ public class FunFactsActivity extends Activity {
             public void onClick(View view) {
 
             }
-        }
+        };
 
 
 
-        showFactButton.setOnClickListener();
+        showFactButton.setOnClickListener(listener);
     }
 
 
