@@ -17,15 +17,18 @@ public class FunFactsActivity extends Activity {
         setContentView(R.layout.activity_fun_facts);
 
         // Declare our View variables and assign the Views from the layout file
-        TextView factLabel = (TextView) findViewById(R.id.factTextView);
+        final TextView factLabel = (TextView) findViewById(R.id.factTextView);
         Button showFactButton = (Button) findViewById(R.id.showFactbutton);
 
         View.OnClickListener listener = new View.OnClickListener(); {
             @Override
             public void onClick(View view) {
+                // The button was clicked, so update the fact label with a new fact
+                String fact = "Ostriches can run faster than horses";
+                factLabel.setText(fact);
 
             }
-        };
+        }
 
 
 
