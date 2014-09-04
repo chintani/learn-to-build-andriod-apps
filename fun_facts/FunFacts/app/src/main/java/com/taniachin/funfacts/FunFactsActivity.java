@@ -19,8 +19,7 @@ public class FunFactsActivity extends Activity {
         // Declare our View variables and assign the Views from the layout file
         final TextView factLabel = (TextView) findViewById(R.id.factTextView);
         Button showFactButton = (Button) findViewById(R.id.showFactbutton);
-
-        View.OnClickListener listener = new View.OnClickListener(); {
+        View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // The button was clicked, so update the fact label with a new fact
@@ -28,7 +27,7 @@ public class FunFactsActivity extends Activity {
                 factLabel.setText(fact);
 
             }
-        }
+        };
 
 
 
