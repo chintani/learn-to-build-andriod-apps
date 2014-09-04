@@ -24,37 +24,25 @@ public class FunFactsActivity extends Activity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String [] facts = {
+                        "Ants stretch when they wake up in the morning.",
+                        "Ostriches can run faster than horses.",
+                        "Olympic gold medals are actually made mostly of silver",
+                        "You are born with 300 bones; by the time you are an adult you will have 206.",
+                        "It takes about 8 minutes for light from the sun to reach Earth.",
+                        "Some bamboo plants can grow almost a meter in just one day.",
+                        "The state of Florida is bigger than England.",
+                        "Some penguins can leap 2-3 meters out of the water",
+                        "On average, it takes 66 days to form a new habit.",
+                        "Mammoths still walked the Earth when the Great Pyramid was being built."
+                };
                 // The button was clicked, so update the fact label with a new fact
                 String fact = "";
                 //Randomly select a fact
                 Random randomGenerator = new Random(); //Construct a new Random number generator
-                int randomNumber = randomGenerator.nextInt(3);
-                /* Convert the randomNumber to a text fact
-                 * 0 = Ants stretch when they wake up in the morning.
-                 * 1 = Ostriches can run faster than horses.
-                 * 2 = Olympic gold medals are actually made mostly of silver.
-                 */
+                int randomNumber = randomGenerator.nextInt(facts.length);
 
-                // if randomNumber equals 0 then
-                if (randomNumber == 0){
-                    // set fact equal to ants fact
-                    fact = "Ants stretch when they wake up in the morning.";
-                }
-
-                // if randomNumber equals to 1 then
-                else if (randomNumber == 1){
-                    // set fact equal to ostriches fact
-                    fact = "Ostriches can run faster than horses.";
-                }
-
-                // if randomNumber equals to 2 then
-                else if (randomNumber == 2){
-                    // set fact equal to olympic fact
-                    fact = "Olympic gold medals are actually made mostly of silver.";
-                }
-                else {
-                    fact = "unknown error ";
-                }
+                fact = facts[randomNumber];
 
                 //Update the label with our dynamic fact
                 factLabel.setText(fact);
