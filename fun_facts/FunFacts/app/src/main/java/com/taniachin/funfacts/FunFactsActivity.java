@@ -2,13 +2,10 @@ package com.taniachin.funfacts;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 import android.view.View;
 
-import java.util.Random;
 
 
 public class FunFactsActivity extends Activity {
