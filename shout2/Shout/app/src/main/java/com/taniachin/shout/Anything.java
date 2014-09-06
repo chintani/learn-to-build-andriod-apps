@@ -1,7 +1,15 @@
 package com.taniachin.shout;
 
+import android.app.Activity;
+import android.os.Bundle;
+
 /**
  * Created by Admin on 9/5/2014.
  */
-public class Anything {
+public class Anything extends Activity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.anything);
+    }
 }
