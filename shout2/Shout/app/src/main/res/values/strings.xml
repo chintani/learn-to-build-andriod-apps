@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Shout</string>
+    <string name="action_settings">Settings</string>
+    <string name="whatcha_got">Whatcha got?</string>
+    <string name="reservation_page">Reservations</string>
+    <string name="new_sale">New Sale</string>
+    <string name="tickets">Tickets For Sale</string>
+    <string name="action_search">Search</string>
+
+
+</resources>
