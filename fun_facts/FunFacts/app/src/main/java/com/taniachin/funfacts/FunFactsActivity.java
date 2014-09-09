@@ -23,7 +23,6 @@ public class FunFactsActivity extends Activity {
             @Override
             public void onClick(View view) {
                 String fact = mFactBook.getFact();
-
                 //Update the label with our dynamic fact
                 factLabel.setText(fact);
             }
