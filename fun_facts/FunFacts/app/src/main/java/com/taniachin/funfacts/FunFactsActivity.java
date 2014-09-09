@@ -1,8 +1,10 @@
 package com.taniachin.funfacts;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.view.View;
 
@@ -19,15 +21,18 @@ public class FunFactsActivity extends Activity {
         // Declare our View variables and assign the Views from the layout file
         final TextView factLabel = (TextView) findViewById(R.id.factTextView);
         Button showFactButton = (Button) findViewById(R.id.showFactbutton);
+        final RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
+
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String fact = mFactBook.getFact();
                 //Update the label with our dynamic fact
                 factLabel.setText(fact);
+                relativeLayout.setBackgroundColor(Color.RED);
             }
         };
-        showFactButton.setOnClickListener(listener);
+                        showFactButton.setOnClickListener(listener);
     }
 
 }
