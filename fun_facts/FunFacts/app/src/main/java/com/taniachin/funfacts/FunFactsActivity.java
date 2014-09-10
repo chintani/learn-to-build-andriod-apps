@@ -12,6 +12,7 @@ import android.view.View;
 
 public class FunFactsActivity extends Activity {
     private FactBook mFactBook = new FactBook();
+    private ColorWheel mColorWheel = new ColorWheel();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,8 @@ public class FunFactsActivity extends Activity {
                 String fact = mFactBook.getFact();
                 //Update the label with our dynamic fact
                 factLabel.setText(fact);
-                relativeLayout.setBackgroundColor(Color.RED);
+                String color = mColorWheel.getColor();
+                relativeLayout.setBackgroundColor(Color);
             }
         };
                         showFactButton.setOnClickListener(listener);
