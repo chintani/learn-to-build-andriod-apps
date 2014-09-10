@@ -1,5 +1,7 @@
 package com.taniachin.funfacts;
 
+import android.graphics.Color;
+
 import java.util.Random;
 
 /**
@@ -8,7 +10,7 @@ import java.util.Random;
 public class ColorWheel {
 
     // Member variable (properties about the object)
-    public String [] mColors = {
+    public int [] mColors = {
             "#39add1", // light blue
             "#3079ab", // dark blue
             "#c25975", // mauve
@@ -34,6 +36,7 @@ public class ColorWheel {
         int randomNumber = randomGenerator.nextInt(mColors.length);
 
         color = mColors[randomNumber];
-        return color;
+        int colorAsInt = Color.parseColor(color);
+        return colorAsInt;
     }
 }
