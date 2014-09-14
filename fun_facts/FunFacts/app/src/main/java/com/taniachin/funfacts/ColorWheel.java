@@ -27,7 +27,7 @@ public class ColorWheel {
     };
 
     // Method (abilities: things the object can do)
-    public String getColor(){
+    public int getColor(){
 
 
         String color = "";
