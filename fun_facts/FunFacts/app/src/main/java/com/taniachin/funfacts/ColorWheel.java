@@ -10,7 +10,7 @@ import java.util.Random;
 public class ColorWheel {
 
     // Member variable (properties about the object)
-    public int [] mColors = {
+    public String [] mColors = {
             "#39add1", // light blue
             "#3079ab", // dark blue
             "#c25975", // mauve
@@ -29,14 +29,15 @@ public class ColorWheel {
     // Method (abilities: things the object can do)
     public int getColor(){
 
-
         String color = "";
+
         //Randomly select a fact
         Random randomGenerator = new Random(); //Construct a new Random number generator
         int randomNumber = randomGenerator.nextInt(mColors.length);
 
         color = mColors[randomNumber];
         int colorAsInt = Color.parseColor(color);
+
         return colorAsInt;
     }
 }
