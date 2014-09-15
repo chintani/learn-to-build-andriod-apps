@@ -30,8 +30,8 @@ public class FunFactsActivity extends Activity {
                 String fact = mFactBook.getFact();
                 //Update the label with our dynamic fact
                 factLabel.setText(fact);
-                String color = mColorWheel.getColor();
-                relativeLayout.setBackgroundColor(Color);
+                int color = mColorWheel.getColor();
+                relativeLayout.setBackgroundColor(color);
             }
         };
                         showFactButton.setOnClickListener(listener);
