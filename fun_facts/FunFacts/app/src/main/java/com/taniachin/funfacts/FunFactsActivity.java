@@ -21,7 +21,7 @@ public class FunFactsActivity extends Activity {
 
         // Declare our View variables and assign the Views from the layout file
         final TextView factLabel = (TextView) findViewById(R.id.factTextView);
-        Button showFactButton = (Button) findViewById(R.id.showFactbutton);
+        final Button showFactButton = (Button) findViewById(R.id.showFactbutton);
         final RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayout);
 
         View.OnClickListener listener = new View.OnClickListener() {
@@ -32,6 +32,7 @@ public class FunFactsActivity extends Activity {
                 factLabel.setText(fact);
                 int color = mColorWheel.getColor();
                 relativeLayout.setBackgroundColor(color);
+                showFactButton.setTextColor(color);
             }
         };
                         showFactButton.setOnClickListener(listener);
