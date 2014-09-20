@@ -36,9 +36,9 @@ public class FunFactsActivity extends Activity {
             }
         };
                         showFactButton.setOnClickListener(listener);
-        String message ="Yay! Our Activity was created!"; // to debug, remover later.
-        Toast welcomeToast = Toast.makeText(this, message, Toast.LENGTH_LONG);// to debug, remover later.
-        welcomeToast.show();// to debug, remover later.
+
+        Toast.makeText(this, "Yay! Our Activity was created!", Toast.LENGTH_LONG).show();// to debug, remover later.
+
     }
 
 }
