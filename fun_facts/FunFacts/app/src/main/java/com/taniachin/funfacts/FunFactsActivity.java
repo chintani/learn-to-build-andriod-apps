@@ -3,6 +3,7 @@ package com.taniachin.funfacts;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -37,7 +38,8 @@ public class FunFactsActivity extends Activity {
         };
                         showFactButton.setOnClickListener(listener);
 
-        //Toast.makeText(this, "Yay! Our Activity was created!", Toast.LENGTH_LONG).show();// to debug, remover later.
+        //Toast.makeText(this, "Yay! Our Activity was created!", Toast.LENGTH_LONG).show(); to debug, remover later.
+        Log.d("FunFactsActivity", "We're logging from the onCreate() method!");
 
     }
 
