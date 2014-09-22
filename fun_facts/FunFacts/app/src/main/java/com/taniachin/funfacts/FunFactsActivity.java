@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 
 public class FunFactsActivity extends Activity {
+    public static final String TAG = "FunFactsActivity";
     private FactBook mFactBook = new FactBook();
     private ColorWheel mColorWheel = new ColorWheel();
 
