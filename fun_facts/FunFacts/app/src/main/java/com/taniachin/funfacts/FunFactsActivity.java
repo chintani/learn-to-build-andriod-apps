@@ -40,7 +40,7 @@ public class FunFactsActivity extends Activity {
                         showFactButton.setOnClickListener(listener);
 
         //Toast.makeText(this, "Yay! Our Activity was created!", Toast.LENGTH_LONG).show(); to debug, remover later.
-        Log.d("FunFactsActivity", "We're logging from the onCreate() method!");
+        Log.d(TAG, "We're logging from the onCreate() method!");
 
     }
 
