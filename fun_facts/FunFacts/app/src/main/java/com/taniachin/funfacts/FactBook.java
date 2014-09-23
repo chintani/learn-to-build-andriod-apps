@@ -7,22 +7,22 @@ import java.util.Random;
  */
 public class FactBook {
 
-    // Member variable (properties about the object)
-    public String [] mFacts = {
-            "Ants stretch when they wake up in the morning.",
-            "Ostriches can run faster than horses.",
-            "Olympic gold medals are actually made mostly of silver",
-            "You are born with 300 bones; by the time you are an adult you will have 206.",
-            "It takes about 8 minutes for light from the sun to reach Earth.",
-            "Some bamboo plants can grow almost a meter in just one day.",
-            "The state of Florida is bigger than England.",
-            "Some penguins can leap 2-3 meters out of the water",
-            "On average, it takes 66 days to form a new habit.",
-            "Mammoths still walked the Earth when the Great Pyramid was being built."
-    };
+// Member variable (properties about the object)
+public String [] mFacts = {
+        "Ants stretch when they wake up in the morning.",
+        "Ostriches can run faster than horses.",
+        "Olympic gold medals are actually made mostly of silver",
+        "You are born with 300 bones; by the time you are an adult you will have 206.",
+        "It takes about 8 minutes for light from the sun to reach Earth.",
+        "Some bamboo plants can grow almost a meter in just one day.",
+        "The state of Florida is bigger than England.",
+        "Some penguins can leap 2-3 meters out of the water",
+        "On average, it takes 66 days to form a new habit.",
+        "Mammoths still walked the Earth when the Great Pyramid was being built."
+        };
 
-    // Method (abilities: things the object can do)
-    public String getFact(){
+// Method (abilities: things the object can do)
+public String getFact(){
 
 
         String fact = "";
@@ -32,5 +32,5 @@ public class FactBook {
 
         fact = mFacts[randomNumber];
         return fact;
-    }
-}
+        }
+        }
