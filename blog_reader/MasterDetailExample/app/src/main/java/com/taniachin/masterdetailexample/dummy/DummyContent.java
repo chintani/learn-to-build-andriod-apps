@@ -24,10 +24,12 @@ public class DummyContent {
     public static Map<String, DummyItem> ITEM_MAP = new HashMap<String, DummyItem>();
 
     static {
-        // Add 3 sample items.
+        // Add 5 sample items.
         addItem(new DummyItem("1", "The Beginner's Guide to Android"));
         addItem(new DummyItem("2", "Why Developing Apps for Android is important"));
         addItem(new DummyItem("3", "Why Developing Apps for Android is Fun"));
+        addItem(new DummyItem("4", "Who Wins the Fight Between Android and iOs in 2012?"));
+        addItem(new DummyItem("5", "Java Basics for Android Development - Part 1"));
 
     }
 
