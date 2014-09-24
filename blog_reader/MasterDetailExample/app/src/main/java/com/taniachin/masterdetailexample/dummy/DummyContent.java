@@ -25,11 +25,11 @@ public class DummyContent {
 
     static {
         // Add 5 sample items.
-        addItem(new DummyItem("1", "The Beginner's Guide to Android"));
-        addItem(new DummyItem("2", "Why Developing Apps for Android is important"));
-        addItem(new DummyItem("3", "Why Developing Apps for Android is Fun"));
-        addItem(new DummyItem("4", "Who Wins the Fight Between Android and iOs in 2012?"));
-        addItem(new DummyItem("5", "Java Basics for Android Development - Part 1"));
+        addItem(new DummyItem("1", "The Beginner's Guide to Android", "Description 1"));
+        addItem(new DummyItem("2", "Why Developing Apps for Android is important", "Description 2"));
+        addItem(new DummyItem("3", "Why Developing Apps for Android is Fun", "Description 3"));
+        addItem(new DummyItem("4", "Who Wins the Fight Between Android and iOs in 2012?", "Description 4"));
+        addItem(new DummyItem("5", "Java Basics for Android Development - Part 1", "Description 5"));
 
     }
 
@@ -44,10 +44,12 @@ public class DummyContent {
     public static class DummyItem {
         public String id;
         public String content;
+        public String description;
 
-        public DummyItem(String id, String content) {
+        public DummyItem(String id, String content, String description) {
             this.id = id;
             this.content = content;
+            this.description = description;
         }
 
         @Override
