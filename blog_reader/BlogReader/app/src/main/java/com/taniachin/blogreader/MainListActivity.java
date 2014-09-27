@@ -9,27 +9,15 @@ import android.widget.Toast;
 
 
 public class MainListActivity extends ListActivity {
-    protected String[] mAndroidNames ={
-            "Android beta",
-            "Android 1.0",
-            "Android 1.1",
-            "Cupcake",
-            "Donut",
-            "Eclair",
-            "Froyo",
-            "Gingerbread",
-            "Honeycomb",
-            "Ice Cream Sandwich",
-            "Jelly Bean"
-    };
+    protected String[] mAndroidNames;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_list);
 
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mAndroidNames);
-       // setListAdapter(adapter);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mAndroidNames);
+        setListAdapter(adapter);
 
 
        //Toast.makeText(this, getString(R.string.no_items), Toast.LENGTH_LONG).show();
