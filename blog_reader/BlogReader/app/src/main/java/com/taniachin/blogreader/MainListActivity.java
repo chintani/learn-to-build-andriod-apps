@@ -1,11 +1,12 @@
 package com.taniachin.blogreader;
 
 import android.app.ListActivity;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
+//import android.widget.Toast;
 
 
 public class MainListActivity extends ListActivity {
@@ -15,6 +16,10 @@ public class MainListActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_list);
+
+        Resources resources = getResources();
+        mAndroidNames = resources.getStringArray(R.array.android_names);
+
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mAndroidNames);
         setListAdapter(adapter);
