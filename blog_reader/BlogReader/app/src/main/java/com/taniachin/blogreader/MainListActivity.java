@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 
 
 public class MainListActivity extends ListActivity {
-    protected String[] mAndroidNames;
+    protected String[] mBlogPostTitles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,10 +18,10 @@ public class MainListActivity extends ListActivity {
         setContentView(R.layout.activity_main_list);
 
         Resources resources = getResources();
-        mAndroidNames = resources.getStringArray(R.array.android_names);
+        mBlogPostTitles = resources.getStringArray(R.array.android_names);
 
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mAndroidNames);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mBlogPostTitles);
         setListAdapter(adapter);
 
 
