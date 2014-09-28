@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 public class MainListActivity extends ListActivity {
     protected String[] mBlogPostTitles;
     public static final int NUMBER_OF_POSTS = 20;
+    public static final String TAG = MainListActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
