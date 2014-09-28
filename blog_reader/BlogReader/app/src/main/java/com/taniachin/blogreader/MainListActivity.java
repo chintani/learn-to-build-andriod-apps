@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 
 public class MainListActivity extends ListActivity {
     protected String[] mBlogPostTitles;
+    public static final int NUMBER_OF_POSTS = 20;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
