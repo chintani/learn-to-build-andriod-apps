@@ -1,11 +1,12 @@
 package com.taniachin.blogreader;
 
 import android.app.ListActivity;
-import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
+import java.net.MalformedURLException;
+import java.net.URL;
 //import android.widget.Toast;
 
 
@@ -19,8 +20,12 @@ public class MainListActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_list);
 
-        URL blogFeedUrl = new URL("feeds.feedburner.com/aworldofproducts")
-
+        try {
+            URL blogFeedUrl = new URL("feeds.feedburner.com/aworldofproducts/?count=" + NUMBER_OF_POSTS);
+        }
+        catch(MalformedURLException e) {
+            Log.e(TAG, "Exception caught:", e);
+        }
 
        //Toast.makeText(this, getString(R.string.no_items), Toast.LENGTH_LONG).show();
     }
