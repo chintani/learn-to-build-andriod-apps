@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.io.IOException;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 //import android.widget.Toast;
@@ -22,12 +25,17 @@ public class MainListActivity extends ListActivity {
 
         try {
             URL blogFeedUrl = new URL("feeds.feedburner.com/aworldofproducts/?count=" + NUMBER_OF_POSTS);
+            HttpURLConnection connection = (HttpURLConnection) blogFeedUrl.openConnection();
+            connection.connect();
         }
         catch(MalformedURLException e) {
             Log.e(TAG, "Exception caught:", e);
+        } catch (IOException e) {
+            Log.e(TAG, "Exception caught;", e);
         }
 
-       //Toast.makeText(this, getString(R.string.no_items), Toast.LENGTH_LONG).show();
+
+        //Toast.makeText(this, getString(R.string.no_items), Toast.LENGTH_LONG).show();
     }
 
 
