@@ -19,7 +19,7 @@ public class MainListActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_list);
 
-
+        URL blogFeedUrl = new URL("feeds.feedburner.com/aworldofproducts")
 
 
        //Toast.makeText(this, getString(R.string.no_items), Toast.LENGTH_LONG).show();
