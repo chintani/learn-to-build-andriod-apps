@@ -27,10 +27,14 @@ public class MainListActivity extends ListActivity {
             URL blogFeedUrl = new URL("feeds.feedburner.com/aworldofproducts/?count=" + NUMBER_OF_POSTS);
             HttpURLConnection connection = (HttpURLConnection) blogFeedUrl.openConnection();
             connection.connect();
+
+            int responseCode = connection.getResponseCode();
+            Log.i(TAG, "Code:" + responseCode);
         }
         catch(MalformedURLException e) {
             Log.e(TAG, "Exception caught:", e);
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             Log.e(TAG, "Exception caught;", e);
         }
 
