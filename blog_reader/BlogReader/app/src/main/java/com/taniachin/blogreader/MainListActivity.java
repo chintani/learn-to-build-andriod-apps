@@ -1,6 +1,7 @@
 package com.taniachin.blogreader;
 
 import android.app.ListActivity;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -49,6 +50,16 @@ public class MainListActivity extends ListActivity {
         getMenuInflater().inflate(R.menu.main_list, menu);
         return true;
     }
+
+    private class GetBlogPostsTask extends AsyncTask{
+
+        @Override
+        protected Object doInBackground(Object[] objects) {
+            return null;
+        }
+    }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
