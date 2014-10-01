@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -24,6 +23,8 @@ public class MainListActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_list);
 
+        GetBlogPostsTask getBlogPostsTask = new GetBlogPostsTask();
+        getBlogPostsTask.execute();
        //Toast.makeText(this, getString(R.string.no_items), Toast.LENGTH_LONG).show();
     }
 
@@ -39,38 +40,26 @@ public class MainListActivity extends ListActivity {
 
         @Override
         protected String doInBackground(Object[] objects) {
+            int responseCode = -1;
+
             try {
                 URL blogFeedUrl = new URL("feeds.feedburner.com/aworldofproducts/"); //?count=" + NUMBER_OF_POSTS);
                 HttpURLConnection connection = (HttpURLConnection) blogFeedUrl.openConnection();
                 connection.connect();
 
-                int responseCode = connection.getResponseCode();
+                responseCode = connection.getResponseCode();
                 Log.i(TAG, "Code:" + responseCode);
-            }
-            catch(MalformedURLException e) {
+            } catch (MalformedURLException e) {
                 Log.e(TAG, "Exception caught:", e);
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
+                Log.e(TAG, "Exception caught;", e);
+            } catch (Exception e) {
                 Log.e(TAG, "Exception caught;", e);
             }
-            catch (Exception e) {
-                Log.e(TAG, "Exception caught;", e);
-            }
 
-    }
-
-
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+            return "Code;" + responseCode;
         }
-        return super.onOptionsItemSelected(item);
+
+
     }
 }
