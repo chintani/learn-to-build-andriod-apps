@@ -24,7 +24,7 @@ public class MainListActivity extends ListActivity {
         setContentView(R.layout.activity_main_list);
 
         try {
-            URL blogFeedUrl = new URL("feeds.feedburner.com/aworldofproducts/?count=" + NUMBER_OF_POSTS);
+            URL blogFeedUrl = new URL("feeds.feedburner.com/aworldofproducts/"); //?count=" + NUMBER_OF_POSTS);
             HttpURLConnection connection = (HttpURLConnection) blogFeedUrl.openConnection();
             connection.connect();
 
