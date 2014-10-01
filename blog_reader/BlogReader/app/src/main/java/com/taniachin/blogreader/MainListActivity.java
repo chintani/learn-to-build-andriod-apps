@@ -53,6 +53,10 @@ public class MainListActivity extends ListActivity {
             catch (IOException e) {
                 Log.e(TAG, "Exception caught;", e);
             }
+            catch (Exception e) {
+                Log.e(TAG, "Exception caught;", e);
+            }
+
     }
 
 
