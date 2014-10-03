@@ -5,7 +5,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
