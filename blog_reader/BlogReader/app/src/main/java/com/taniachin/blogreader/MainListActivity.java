@@ -1,10 +1,14 @@
 package com.taniachin.blogreader;
 
 import android.app.ListActivity;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -22,8 +26,10 @@ public class MainListActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_list);
 
-        GetBlogPostsTask getBlogPostsTask = new GetBlogPostsTask();
-        getBlogPostsTask.execute();
+        if (isNetworkAvailable ()) {
+
+            GetBlogPostsTask getBlogPostsTask = new GetBlogPostsTask();
+            getBlogPostsTask.execute();
        //Toast.makeText(this, getString(R.string.no_items), Toast.LENGTH_LONG).show();
     }
 
@@ -60,5 +66,13 @@ public class MainListActivity extends ListActivity {
         }
 
 
+    }
+}
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager manager = (ConnectivityManager)
+                getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = manager.getActiveNetworkInfo();
+        return false;
     }
 }
