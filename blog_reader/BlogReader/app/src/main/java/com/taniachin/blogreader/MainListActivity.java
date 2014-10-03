@@ -8,7 +8,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
-
+import android.widget.Toast;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -30,6 +30,10 @@ public class MainListActivity extends ListActivity {
 
             GetBlogPostsTask getBlogPostsTask = new GetBlogPostsTask();
             getBlogPostsTask.execute();
+        }
+        else {
+                Toast.makeText(this, "Network is unavailable", Toast.LENGTH_LONG).show();
+            }
        //Toast.makeText(this, getString(R.string.no_items), Toast.LENGTH_LONG).show();
     }
 
@@ -67,12 +71,18 @@ public class MainListActivity extends ListActivity {
 
 
     }
-}
+
 
     private boolean isNetworkAvailable() {
         ConnectivityManager manager = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = manager.getActiveNetworkInfo();
-        return false;
+
+        boolean isAvailable = false;
+        if (networkInfo != null && networkInfo.isConnected()){
+            isAvailable = true;
+
+        }
+        return isAvailable;
     }
 }
