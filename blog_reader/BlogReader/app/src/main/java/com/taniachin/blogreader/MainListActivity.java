@@ -63,6 +63,11 @@ public class MainListActivity extends ListActivity {
                 if (responseCode == HttpURLConnection.HTTP_OK){
                     InputStream inputStream = connection.getInputStream();
                     Reader reader = new InputStreamReader(inputStream);
+                    int contentLength = connection.getContentLength();
+                    char [] charArray = new char[contentLength];
+                    reader.read(charArray);
+                    String responseData = new String(charArray);
+                    Log.v(TAG, responseData);
                 }
                 else{
                     Log.i(TAG, "Unsuccessful HTTP Response Code:" + responseCode);
