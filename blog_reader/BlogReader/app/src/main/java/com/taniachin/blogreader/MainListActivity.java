@@ -10,6 +10,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.widget.Toast;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -58,7 +61,8 @@ public class MainListActivity extends ListActivity {
 
                 responseCode = connection.getResponseCode();
                 if (responseCode == HttpURLConnection.HTTP_OK){
-
+                    InputStream inputStream = connection.getInputStream();
+                    Reader reader = new InputStreamReader(inputStream);
                 }
                 else{
                     Log.i(TAG, "Unsuccessful HTTP Response Code:" + responseCode);
