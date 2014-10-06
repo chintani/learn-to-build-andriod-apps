@@ -59,7 +59,7 @@ public class MainListActivity extends ListActivity {
             int responseCode = -1;
 
             try {
-                URL blogFeedUrl = new URL("http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=100&q=http://feeds.feedburner.com/aworldofproducts"); //?count=" + NUMBER_OF_POSTS);
+                URL blogFeedUrl = new URL("http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=100&q=http://feeds.feedburner.com/aworldofproducts?count=" + NUMBER_OF_POSTS);
                 HttpURLConnection connection = (HttpURLConnection) blogFeedUrl.openConnection();
                 connection.connect();
 
@@ -76,9 +76,11 @@ public class MainListActivity extends ListActivity {
                     String status = jsonResponse.getString("status");
                     Log.v(TAG, status);
 
-                    JSONArray jasonPost = jsonResponse.getJSONArray("entries");
+                    JSONArray jsonPosts = jsonResponse.getJSONArray("entries");
                     for (int i = 0; i <jsonPosts.length(); i ++){
-                        JSONObject jsonPost = jsonPosts.getJSONObject(index)
+                        JSONObject jsonPost = jsonPosts.getJSONObject(i);
+                        String title = jsonPost.getString("title");
+                        Log.v(TAG, "Post" + i + ":" + title);
                     }
                 }
                 else{
