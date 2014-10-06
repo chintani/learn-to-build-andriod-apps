@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -71,6 +72,9 @@ public class MainListActivity extends ListActivity {
                     reader.read(charArray);
                     String responseData = new String(charArray);
                     JSONObject jsonResponse = new JSONObject(responseData);
+                    String status = jsonResponse.getString("status");
+                    Log.v(TAG, status);
+                    JSONArray jasonPost = jsonResponse.getJSONArray("entries");
                 }
                 else{
                     Log.i(TAG, "Unsuccessful HTTP Response Code:" + responseCode);
