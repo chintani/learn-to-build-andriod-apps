@@ -58,7 +58,7 @@ public class MainListActivity extends ListActivity {
             int responseCode = -1;
 
             try {
-                URL blogFeedUrl = new URL("http://feeds.feedburner.com/aworldofproducts/"); //?count=" + NUMBER_OF_POSTS);
+                URL blogFeedUrl = new URL("http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=100&q=http://feeds.feedburner.com/aworldofproducts"); //?count=" + NUMBER_OF_POSTS);
                 HttpURLConnection connection = (HttpURLConnection) blogFeedUrl.openConnection();
                 connection.connect();
 
