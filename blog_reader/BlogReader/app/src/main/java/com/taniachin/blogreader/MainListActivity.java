@@ -71,10 +71,15 @@ public class MainListActivity extends ListActivity {
                     char [] charArray = new char[contentLength];
                     reader.read(charArray);
                     String responseData = new String(charArray);
+
                     JSONObject jsonResponse = new JSONObject(responseData);
                     String status = jsonResponse.getString("status");
                     Log.v(TAG, status);
+
                     JSONArray jasonPost = jsonResponse.getJSONArray("entries");
+                    for (int i = 0; i <jsonPosts.length(); i ++){
+                        JSONObject jsonPost = jsonPosts.getJSONObject(index)
+                    }
                 }
                 else{
                     Log.i(TAG, "Unsuccessful HTTP Response Code:" + responseCode);
