@@ -53,6 +53,9 @@ public class MainListActivity extends ListActivity {
         return true;
     }
 
+    private void updateList() {
+    }
+
     private class GetBlogPostsTask extends AsyncTask<Object, Void, JSONObject> {
 
         @Override
@@ -95,8 +98,12 @@ public class MainListActivity extends ListActivity {
 
         @Override
         protected void onPostExecute(JSONObject result){
+            mBlogData = result;
+            updateList();
 
         }
+
+
     }
 
 
