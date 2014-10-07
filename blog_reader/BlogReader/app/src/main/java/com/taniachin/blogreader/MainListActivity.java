@@ -27,6 +27,7 @@ public class MainListActivity extends ListActivity {
     protected String[] mBlogPostTitles;
     public static final int NUMBER_OF_POSTS = 20;
     public static final String TAG = MainListActivity.class.getSimpleName();
+    protected JSONObject mBlogData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +53,12 @@ public class MainListActivity extends ListActivity {
         return true;
     }
 
-    private class GetBlogPostsTask extends AsyncTask<Object, Void, String> {
+    private class GetBlogPostsTask extends AsyncTask<Object, Void, JSONObject> {
 
         @Override
-        protected String doInBackground(Object[] objects) {
+        protected JSONObject doInBackground(Object[] objects) {
             int responseCode = -1;
+            JSONObject jsonResponse = null;
 
             try {
                 URL blogFeedUrl = new URL("http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=100&q=http://feeds.feedburner.com/aworldofproducts?count=" + NUMBER_OF_POSTS);
@@ -67,21 +69,14 @@ public class MainListActivity extends ListActivity {
                 if (responseCode == HttpURLConnection.HTTP_OK){
                     InputStream inputStream = connection.getInputStream();
                     Reader reader = new InputStreamReader(inputStream);
+
                     int contentLength = connection.getContentLength();
                     char [] charArray = new char[contentLength];
                     reader.read(charArray);
                     String responseData = new String(charArray);
 
-                    JSONObject jsonResponse = new JSONObject(responseData);
-                    String status = jsonResponse.getString("status");
-                    Log.v(TAG, status);
+                    jsonResponse = new JSONObject(responseData);
 
-                    JSONArray jsonPosts = jsonResponse.getJSONArray("entries");
-                    for (int i = 0; i <jsonPosts.length(); i ++){
-                        JSONObject jsonPost = jsonPosts.getJSONObject(i);
-                        String title = jsonPost.getString("title");
-                        Log.v(TAG, "Post" + i + ":" + title);
-                    }
                 }
                 else{
                     Log.i(TAG, "Unsuccessful HTTP Response Code:" + responseCode);
@@ -95,11 +90,11 @@ public class MainListActivity extends ListActivity {
                 Log.e(TAG, "Exception caught;", e);
             }
 
-            return "Code;" + responseCode;
+            return jsonResponse;
         }
 
         @Override
-        protected void onPostExecute(String result){
+        protected void onPostExecute(JSONObject result){
 
         }
     }
