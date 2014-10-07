@@ -54,6 +54,9 @@ public class MainListActivity extends ListActivity {
     }
 
     private void updateList() {
+        if (mBlogData == null){
+            // TODO: Handle error
+        }
     }
 
     private class GetBlogPostsTask extends AsyncTask<Object, Void, JSONObject> {
