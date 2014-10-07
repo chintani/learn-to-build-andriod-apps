@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.widget.Toast;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -53,9 +54,16 @@ public class MainListActivity extends ListActivity {
         return true;
     }
 
-    private void updateList() {
+    public void updateList() {
         if (mBlogData == null){
             // TODO: Handle error
+        }
+        else {
+            try {
+                Log.d(TAG, mBlogData.toString(2));
+            } catch (JSONException e) {
+                Log.e(TAG, "Exception caught", e);
+            }
         }
     }
 
