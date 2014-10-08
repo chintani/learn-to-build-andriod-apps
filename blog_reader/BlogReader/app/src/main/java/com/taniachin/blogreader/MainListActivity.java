@@ -60,7 +60,8 @@ public class MainListActivity extends ListActivity {
         }
         else {
             try {
-                Log.d(TAG, mBlogData.toString(2));
+                JSONArray jsonPosts = mBlogData.getJSONArray("entries");
+                mBlogPostTitles = new String[jsonPosts.length()];
             } catch (JSONException e) {
                 Log.e(TAG, "Exception caught", e);
             }
