@@ -62,6 +62,11 @@ public class MainListActivity extends ListActivity {
             try {
                 JSONArray jsonPosts = mBlogData.getJSONArray("entries");
                 mBlogPostTitles = new String[jsonPosts.length()];
+                for (int i = 0; i < jsonPosts.length(); i++){
+                    JSONObject post = jsonPosts.getJSONObject(i);
+                    String title = post.getString("title");
+                    mBlogPostTitles[i] = title;
+                }
             } catch (JSONException e) {
                 Log.e(TAG, "Exception caught", e);
             }
