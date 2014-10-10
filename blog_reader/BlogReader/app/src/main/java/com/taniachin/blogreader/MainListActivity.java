@@ -1,5 +1,6 @@
 package com.taniachin.blogreader;
 
+import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -59,6 +60,7 @@ public class MainListActivity extends ListActivity {
     public void updateList() {
         if (mBlogData == null){
             // TODO: Handle error
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
         }
         else {
             try {
