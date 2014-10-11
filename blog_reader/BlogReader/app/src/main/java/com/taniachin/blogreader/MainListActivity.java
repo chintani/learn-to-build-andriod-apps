@@ -63,7 +63,7 @@ public class MainListActivity extends ListActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(getString(R.string.error_title));
             builder.setMessage(getString(R.string.error_message));
-            builder.setPositiveButton(textId, listener);
+            builder.setPositiveButton(android.R.string.ok, null);
         }
         else {
             try {
