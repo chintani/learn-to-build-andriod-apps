@@ -61,6 +61,7 @@ public class MainListActivity extends ListActivity {
         if (mBlogData == null){
             // TODO: Handle error
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle(title);
         }
         else {
             try {
