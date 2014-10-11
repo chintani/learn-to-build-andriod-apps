@@ -62,6 +62,7 @@ public class MainListActivity extends ListActivity {
             // TODO: Handle error
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(getString(R.string.error_title));
+            builder.setMessage(getString(R.string.error_message));
         }
         else {
             try {
