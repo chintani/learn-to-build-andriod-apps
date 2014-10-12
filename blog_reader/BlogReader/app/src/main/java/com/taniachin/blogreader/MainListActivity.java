@@ -67,7 +67,7 @@ public class MainListActivity extends ListActivity {
         }
         else {
             try {
-                JSONArray jsonPosts = mBlogData.getJSONArray("entries");
+                JSONArray jsonPosts = mBlogData.getJSONArray("posts");
                 mBlogPostTitles = new String[jsonPosts.length()];
                 for (int i = 0; i < jsonPosts.length(); i++){
                     JSONObject post = jsonPosts.getJSONObject(i);
