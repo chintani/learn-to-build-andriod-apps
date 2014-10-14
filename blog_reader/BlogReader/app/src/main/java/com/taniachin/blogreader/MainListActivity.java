@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -41,8 +42,10 @@ public class MainListActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_list);
 
-        if (isNetworkAvailable ()) {
+        mProgressBar = (ProgressBar) findViewById(R.id.progressBar2);
 
+        if (isNetworkAvailable ()) {
+            mProgressBar.setVisibility(View.VISIBLE);
             GetBlogPostsTask getBlogPostsTask = new GetBlogPostsTask();
             getBlogPostsTask.execute();
         }
