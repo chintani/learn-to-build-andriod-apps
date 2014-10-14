@@ -11,6 +11,7 @@ import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +34,7 @@ public class MainListActivity extends ListActivity {
     public static final int NUMBER_OF_POSTS = 20;
     public static final String TAG = MainListActivity.class.getSimpleName();
     protected JSONObject mBlogData;
+    protected ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
