@@ -64,6 +64,7 @@ public class MainListActivity extends ListActivity {
     }
 
     public void updateList() {
+        mProgressBar.setVisibility(View.INVISIBLE);
         if (mBlogData == null){
             // TODO: Handle error
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
