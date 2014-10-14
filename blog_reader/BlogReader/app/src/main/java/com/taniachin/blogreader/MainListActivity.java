@@ -11,6 +11,7 @@ import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -66,6 +67,9 @@ public class MainListActivity extends ListActivity {
             builder.setPositiveButton(android.R.string.ok, null);
             AlertDialog dialog = builder.create();
             dialog.show();
+
+            TextView emptyTextView = (TextView) getListView().getEmptyView();
+            emptyTextView.setText(getString(R.string.no_items));
         }
         else {
             try {
