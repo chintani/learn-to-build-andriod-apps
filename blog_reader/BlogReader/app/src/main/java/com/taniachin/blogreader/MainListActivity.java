@@ -94,8 +94,7 @@ public class MainListActivity extends ListActivity {
 
 
                 }
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                        android.R.layout.simple_list_item_1, mBlogPostTitles);
+
                 setListAdapter(adapter);
             }
             catch (JSONException e) {
