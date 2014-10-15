@@ -63,7 +63,7 @@ public class MainListActivity extends ListActivity {
         return true;
     }
 
-    public void updateList() {
+    public void handleBlogResponse() {
         mProgressBar.setVisibility(View.INVISIBLE);
         if (mBlogData == null){
             // TODO: Handle error
@@ -141,7 +141,7 @@ public class MainListActivity extends ListActivity {
         @Override
         protected void onPostExecute(JSONObject result){
             mBlogData = result;
-            updateList();
+            handleBlogResponse();
 
         }
 
