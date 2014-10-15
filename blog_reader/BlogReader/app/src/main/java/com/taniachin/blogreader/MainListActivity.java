@@ -27,6 +27,8 @@ import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
 //import android.widget.Toast;
 
 
@@ -72,7 +74,7 @@ public class MainListActivity extends ListActivity {
         else {
             try {
                 JSONArray jsonPosts = mBlogData.getJSONArray("posts");
-                mBlogPostTitles = new String[jsonPosts.length()];
+                ArrayList<HashMap<String, String>> blogPosts = new ArrayList<HashMap<String, String>>();
                 for (int i = 0; i < jsonPosts.length(); i++){
                     JSONObject post = jsonPosts.getJSONObject(i);
                     String title = post.getString("title");
