@@ -3,8 +3,10 @@ package com.taniachin.blogreader;
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Html;
@@ -70,7 +72,11 @@ public class MainListActivity extends ListActivity {
             JSONArray jsonPosts = mBlogData.getJSONArray("posts");
             JSONObject jsonPost = jsonPosts.getJSONObject(position);
             String blogUrl = jsonPost.getString("url");
-        } catch (JSONException e) {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(blogUrl));
+            startActivity(intent);
+        }
+        catch (JSONException e) {
             logException(e);
         }
     }
