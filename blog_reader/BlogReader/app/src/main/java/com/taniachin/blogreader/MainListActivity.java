@@ -71,8 +71,12 @@ public class MainListActivity extends ListActivity {
             JSONObject jsonPost = jsonPosts.getJSONObject(position);
             String blogUrl = jsonPost.getString("url");
         } catch (JSONException e) {
-            Log.e(TAG, "Exception caught!", e);
+            logException(e);
         }
+    }
+
+    private void logException(Exception e) {
+        Log.e(TAG, "Exception caught!", e);
     }
 
     public void handleBlogResponse() {
@@ -154,11 +158,11 @@ public class MainListActivity extends ListActivity {
                 }
 
             } catch (MalformedURLException e) {
-                Log.e(TAG, "Exception caught:", e);
+                logException(e);
             } catch (IOException e) {
-                Log.e(TAG, "Exception caught;", e);
+                logException(e);
             } catch (Exception e) {
-                Log.e(TAG, "Exception caught;", e);
+                logException(e);
             }
 
             return jsonResponse;
