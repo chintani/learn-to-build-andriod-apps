@@ -142,7 +142,7 @@ public class MainListActivity extends ListActivity {
             JSONObject jsonResponse = null;
 
             try {
-                URL blogFeedUrl = new URL("http://blog.teamtreehouse.com/api/get_recent_summary/?count=20" + NUMBER_OF_POSTS);
+                URL blogFeedUrl = new URL("http://blog.teamtreehouse.com/api/get_recent_summary/?count=" + NUMBER_OF_POSTS);
                 HttpURLConnection connection = (HttpURLConnection) blogFeedUrl.openConnection();
                 connection.connect();
 
