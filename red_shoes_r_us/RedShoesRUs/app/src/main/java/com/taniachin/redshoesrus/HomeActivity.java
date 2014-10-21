@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 
 public class HomeActivity extends ListActivity {
@@ -30,8 +31,11 @@ public class HomeActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1 ,mAndroidNames);
-        setListAdapter(adapter);
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1 ,mAndroidNames);
+        //setListAdapter(adapter);
+
+        String message = getString(R.string.no_items);
+        Toast.makeText(this, message, Toast.LENGTH_LONG) .show();
     }
 
 
