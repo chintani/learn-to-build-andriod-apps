@@ -31,11 +31,11 @@ public class HomeActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1 ,mAndroidNames);
-        //setListAdapter(adapter);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1 ,mAndroidNames);
+        setListAdapter(adapter);
 
-        String message = getString(R.string.no_items);
-        Toast.makeText(this, message, Toast.LENGTH_LONG) .show();
+
+        //Toast.makeText(this, getString(R.string.no_items), Toast.LENGTH_LONG) .show();
     }
 
 
