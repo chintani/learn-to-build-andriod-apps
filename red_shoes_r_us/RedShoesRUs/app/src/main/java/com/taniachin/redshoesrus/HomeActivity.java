@@ -11,17 +11,18 @@ import android.widget.ArrayAdapter;
 public class HomeActivity extends ListActivity {
 
     protected String [] mBlogPostTitles;
+    public static final int NUMBER_OF_POSTS = 20;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Resources resources = getResources();
-        mBlogPostTitles = resources.getStringArray(R.array.android_names);
+        //Resources resources = getResources();
+        //mBlogPostTitles = resources.getStringArray(R.array.android_names);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1 , mBlogPostTitles);
-        setListAdapter(adapter);
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1 , mBlogPostTitles);
+        //setListAdapter(adapter);
 
 
         //Toast.makeText(this, getString(R.string.no_items), Toast.LENGTH_LONG) .show();
