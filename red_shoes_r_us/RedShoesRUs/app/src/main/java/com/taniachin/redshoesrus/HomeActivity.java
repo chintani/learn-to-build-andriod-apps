@@ -12,6 +12,7 @@ public class HomeActivity extends ListActivity {
 
     protected String [] mBlogPostTitles;
     public static final int NUMBER_OF_POSTS = 20;
+    public static final String TAG = HomeActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
