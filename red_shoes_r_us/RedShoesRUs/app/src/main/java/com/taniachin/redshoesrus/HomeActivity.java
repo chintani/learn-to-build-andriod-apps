@@ -6,12 +6,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
 
 
 public class HomeActivity extends ListActivity {
 
-    protected String [] mAndroidNames ;
+    protected String [] mBlogPostTitles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +18,9 @@ public class HomeActivity extends ListActivity {
         setContentView(R.layout.activity_home);
 
         Resources resources = getResources();
-        mAndroidNames = resources.getStringArray(R.array.android_names);
+        mBlogPostTitles = resources.getStringArray(R.array.android_names);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1 ,mAndroidNames);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1 , mBlogPostTitles);
         setListAdapter(adapter);
 
 
