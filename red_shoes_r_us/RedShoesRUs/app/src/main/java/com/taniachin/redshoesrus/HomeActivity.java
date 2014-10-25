@@ -7,6 +7,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 
 public class HomeActivity extends ListActivity {
 
@@ -19,6 +22,12 @@ public class HomeActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        try{
+            URL blogFeedUrl = new URL("http://blogteamtreehouse.com/api/get_recent_summary/?count=");
+        }
+        catch (MalformedURLException e){
+
+        }
         //Resources resources = getResources();
         //mBlogPostTitles = resources.getStringArray(R.array.android_names);
 
