@@ -3,6 +3,7 @@ package com.taniachin.redshoesrus;
 import android.app.ListActivity;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
@@ -26,6 +27,7 @@ public class HomeActivity extends ListActivity {
             URL blogFeedUrl = new URL("http://blogteamtreehouse.com/api/get_recent_summary/?count=");
         }
         catch (MalformedURLException e){
+            Log.e(TAG, "Exception caught", e);
 
         }
         //Resources resources = getResources();
