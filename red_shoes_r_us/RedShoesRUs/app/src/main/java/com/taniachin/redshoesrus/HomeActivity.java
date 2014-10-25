@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -24,9 +25,10 @@ public class HomeActivity extends ListActivity {
         setContentView(R.layout.activity_home);
 
         try{
-            URL blogFeedUrl = new URL("http://blogteamtreehouse.com/api/get_recent_summary/?count=");
+            URL blogFeedUrl = new URL("http://blogteamtreehouse.com/api/get_recent_summary/?count=" + NUMBER_OF_POSTS);
+            HttpURLConnection connection = (HttpURLConnection) blogFeedUrl.openConnection();
         }
-        catch (MalformedURLException e){
+        catch (java.io.IOException e){
             Log.e(TAG, "Exception caught", e);
 
         }
