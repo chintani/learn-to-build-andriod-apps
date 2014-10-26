@@ -32,7 +32,15 @@ public class HomeActivity extends ListActivity {
             int responseCode = connection.getResponseCode();
             Log.i(TAG, "Code:" + responseCode);
         }
+        catch (MalformedURLException e){
+            Log.e(TAG, "Exception caught", e);
+
+        }
         catch (java.io.IOException e){
+            Log.e(TAG, "Exception caught", e);
+
+        }
+        catch (Exception e){
             Log.e(TAG, "Exception caught", e);
 
         }
