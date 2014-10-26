@@ -28,6 +28,9 @@ public class HomeActivity extends ListActivity {
             URL blogFeedUrl = new URL("http://blogteamtreehouse.com/api/get_recent_summary/?count=" + NUMBER_OF_POSTS);
             HttpURLConnection connection = (HttpURLConnection) blogFeedUrl.openConnection();
             connection.connect();
+
+            int responseCode = connection.getResponseCode();
+            Log.i(TAG, "Code:" + responseCode);
         }
         catch (java.io.IOException e){
             Log.e(TAG, "Exception caught", e);
