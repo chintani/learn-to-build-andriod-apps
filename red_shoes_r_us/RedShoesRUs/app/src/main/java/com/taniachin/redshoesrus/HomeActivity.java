@@ -2,6 +2,7 @@ package com.taniachin.redshoesrus;
 
 import android.app.ListActivity;
 import android.content.res.Resources;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -72,5 +73,12 @@ public class HomeActivity extends ListActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    private class GetBlogPostsTask extends AsyncTask {
+
+        @Override
+        protected Object doInBackground(Object[] objects) {
+            return null;
+        }
     }
 }
