@@ -25,26 +25,7 @@ public class HomeActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        try{
-            URL blogFeedUrl = new URL("http://blogteamtreehouse.com/api/get_recent_summary/?count=" + NUMBER_OF_POSTS);
-            HttpURLConnection connection = (HttpURLConnection) blogFeedUrl.openConnection();
-            connection.connect();
 
-            int responseCode = connection.getResponseCode();
-            Log.i(TAG, "Code:" + responseCode);
-        }
-        catch (MalformedURLException e){
-            Log.e(TAG, "Exception caught", e);
-
-        }
-        catch (java.io.IOException e){
-            Log.e(TAG, "Exception caught", e);
-
-        }
-        catch (Exception e){
-            Log.e(TAG, "Exception caught", e);
-
-        }
         //Resources resources = getResources();
         //mBlogPostTitles = resources.getStringArray(R.array.android_names);
 
@@ -78,7 +59,26 @@ public class HomeActivity extends ListActivity {
 
         @Override
         protected String doInBackground(Object[] objects) {
-            return null;
+            try{
+                URL blogFeedUrl = new URL("http://blogteamtreehouse.com/api/get_recent_summary/?count=" + NUMBER_OF_POSTS);
+                HttpURLConnection connection = (HttpURLConnection) blogFeedUrl.openConnection();
+                connection.connect();
+
+                int responseCode = connection.getResponseCode();
+                Log.i(TAG, "Code:" + responseCode);
+            }
+            catch (MalformedURLException e){
+                Log.e(TAG, "Exception caught", e);
+
+            }
+            catch (java.io.IOException e){
+                Log.e(TAG, "Exception caught", e);
+
+            }
+            catch (Exception e){
+                Log.e(TAG, "Exception caught", e);
+
+            }
         }
     }
 }
