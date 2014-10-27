@@ -74,10 +74,10 @@ public class HomeActivity extends ListActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-    private class GetBlogPostsTask extends AsyncTask {
+    private class GetBlogPostsTask extends AsyncTask<Object, Void, String> {
 
         @Override
-        protected Object doInBackground(Object[] objects) {
+        protected String doInBackground(Object[] objects) {
             return null;
         }
     }
