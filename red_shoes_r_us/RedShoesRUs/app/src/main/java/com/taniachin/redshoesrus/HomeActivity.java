@@ -87,6 +87,9 @@ public class HomeActivity extends ListActivity {
 
                     JSONArray jsonPosts = jsonResponse.getJSONArray("posts");
                     for (int i = 0; i<jsonPosts.length(); i ++) {
+                        JSONObject jsonPost = jsonPosts.getJSONObject(i);
+                        String title = jsonPost.getString("title");
+                        Log.v(TAG, "Post" + i + ";" + title);
 
                     }
 
