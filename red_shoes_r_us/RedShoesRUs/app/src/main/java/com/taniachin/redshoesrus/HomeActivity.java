@@ -1,10 +1,15 @@
 package com.taniachin.redshoesrus;
 
 import android.app.ListActivity;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.widget.Toast;
+
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -21,9 +26,14 @@ public class HomeActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        GetBlogPostsTask getBlogPostsTask = new GetBlogPostsTask();
-        getBlogPostsTask.execute();
+        if (isNetworkAvailable()) {
 
+            GetBlogPostsTask getBlogPostsTask = new GetBlogPostsTask();
+            getBlogPostsTask.execute();
+
+        } else {
+            Toast.makeText(this, "Network is unavailable", Toast.LENGTH_LONG).show();
+        }
         //Toast.makeText(this, getString(R.string.no_items), Toast.LENGTH_LONG) .show();
     }
 
@@ -73,5 +83,19 @@ public class HomeActivity extends ListActivity {
             }
             return "Code:" + responseCode;
         }
+    }
+
+
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager manager = (ConnectivityManager)
+                getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = manager.getActiveNetworkInfo();
+
+        boolean isAvailable = false;
+        if(networkInfo != null && networkInfo.isConnected()){
+            isAvailable = true;
+        }
+        return isAvailable;
     }
 }
