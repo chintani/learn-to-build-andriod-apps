@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.InputStream;
@@ -82,6 +83,12 @@ public class HomeActivity extends ListActivity {
                     //Log.v(TAG, responseData);
                     JSONObject jsonResponse = new JSONObject((responseData));
                     String status =jsonResponse.getString("status");
+                    Log.v (TAG, status);
+
+                    JSONArray jsonPosts = jsonResponse.getJSONArray("posts");
+                    for (int i = 0; i<jsonPosts.length(); i ++) {
+
+                    }
 
                 }
                 else {
