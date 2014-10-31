@@ -26,6 +26,7 @@ public class HomeActivity extends ListActivity {
     protected String [] mBlogPostTitles;
     public static final int NUMBER_OF_POSTS = 20;
     public static final String TAG = HomeActivity.class.getSimpleName();
+    protected JSONObject mBlogData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,11 +63,12 @@ public class HomeActivity extends ListActivity {
         //}
         //return super.onOptionsItemSelected(item);
     // }
-    private class GetBlogPostsTask extends AsyncTask<Object, Void, String> {
+    private class GetBlogPostsTask extends AsyncTask<Object, Void, JSONObject> {
 
         @Override
-        protected String doInBackground(Object[] objects) {
+        protected JSONObject doInBackground(Object[] objects) {
             int responseCode = -1;
+            JSONObject jsonResponse = null;
             try{
                 URL blogFeedUrl = new URL("http://blogteamtreehouse.com/api/get_recent_summary/?count=" + NUMBER_OF_POSTS);
                 HttpURLConnection connection = (HttpURLConnection) blogFeedUrl.openConnection();
@@ -81,18 +83,7 @@ public class HomeActivity extends ListActivity {
                     reader.read(charArray);
                     String responseData = new String(charArray);
                     //Log.v(TAG, responseData);
-                    JSONObject jsonResponse = new JSONObject((responseData));
-                    String status =jsonResponse.getString("status");
-                    Log.v (TAG, status);
-
-                    JSONArray jsonPosts = jsonResponse.getJSONArray("posts");
-                    for (int i = 0; i<jsonPosts.length(); i ++) {
-                        JSONObject jsonPost = jsonPosts.getJSONObject(i);
-                        String title = jsonPost.getString("title");
-                        Log.v(TAG, "Post" + i + ";" + title);
-
-                    }
-
+                    jsonResponse = new JSONObject((responseData));
                 }
                 else {
                     Log.i(TAG, "Unsuccessful HTTP Code:" + responseCode);
@@ -110,7 +101,11 @@ public class HomeActivity extends ListActivity {
                 Log.e(TAG, "Exception caught", e);
 
             }
-            return "Code:" + responseCode;
+            return jsonResponse;
+        }
+        @Override
+        protected void onPostExecute(JSONObject result){
+
         }
     }
 
@@ -127,4 +122,5 @@ public class HomeActivity extends ListActivity {
         }
         return isAvailable;
     }
+
 }
