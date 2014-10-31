@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.widget.Toast;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.InputStream;
@@ -105,10 +106,31 @@ public class HomeActivity extends ListActivity {
         }
         @Override
         protected void onPostExecute(JSONObject result){
+            mBlogData = result;
+            updateList();
 
         }
     }
 
+    private void updateList() {
+        if (mBlogData == null) {
+            //TODO: Handle error
+        }
+        else {
+            try {
+                JSONArray jsonPosts = mBlogData.getJSONArray("posts");
+                mBlogPostTitles = new String[jsonPosts.length()];
+                for (int i = 0; i < jsonPosts.length(); i++){
+                    JSONObject post = jsonPosts.getJSONObject(i);
+                    String title = post.getString("title");
+                    mBlogPostTitles[i] = title;
+
+                }
+            } catch (JSONException e) {
+                Log.e(TAG, "Exception caught!", e);
+            }
+        }
+    }
 
 
     private boolean isNetworkAvailable() {
