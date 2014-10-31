@@ -6,6 +6,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
 import android.widget.Toast;
@@ -123,6 +124,7 @@ public class HomeActivity extends ListActivity {
                 for (int i = 0; i < jsonPosts.length(); i++){
                     JSONObject post = jsonPosts.getJSONObject(i);
                     String title = post.getString("title");
+                    title = Html.fromHtml(title).toString();
                     mBlogPostTitles[i] = title;
 
                 }
