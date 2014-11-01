@@ -87,6 +87,13 @@ public class HomeActivity extends ListActivity {
                     jsonResponse = new JSONObject((responseData));
                     String status = jsonResponse.getString("status");
                     Log.v(TAG, status);
+
+                    JSONArray jsonPosts = jsonResponse.getJSONArray("posts");
+                    for (int i = 0; i < jsonPosts.length(); i++){
+                        JSONObject jsonPost = jsonPosts.getJSONObject(i);
+                        String title = jsonPost.getString("title");
+                        Log.v(TAG, "Post" + i + ";" + title);
+                    }
                 }
                 else {
                     Log.i(TAG, "Unsuccessful HTTP Code:" + responseCode);
