@@ -11,11 +11,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -87,6 +85,8 @@ public class HomeActivity extends ListActivity {
                     String responseData = new String(charArray);
                     //Log.v(TAG, responseData);
                     jsonResponse = new JSONObject((responseData));
+                    String status = jsonResponse.getString("status");
+                    Log.v(TAG, status);
                 }
                 else {
                     Log.i(TAG, "Unsuccessful HTTP Code:" + responseCode);
