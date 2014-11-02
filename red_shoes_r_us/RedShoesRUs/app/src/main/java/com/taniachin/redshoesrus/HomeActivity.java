@@ -62,6 +62,29 @@ public class HomeActivity extends ListActivity {
         getMenuInflater().inflate(R.menu.home, menu);
         return true;
     }
+    private void updateList() {
+        if (mBlogData == null) {
+            //TODO: Handle error
+        }
+        else {
+            try {
+               // JSONArray jsonPosts = mBlogData.getJSONArray("posts");
+               // mBlogPostTitles = new String[jsonPosts.length()];
+               // for (int i = 0; i < jsonPosts.length(); i++){
+               //     JSONObject post = jsonPosts.getJSONObject(i);
+               //     String title = post.getString("title");
+              //      title = Html.fromHtml(title).toString();
+               //     mBlogPostTitles[i] = title;
+               // }
+               // ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+               //         android.R.layout.simple_list_item_1, mBlogPostTitles);
+               // setListAdapter(adapter);
+                Log.d(TAG, mBlogData.toString(2));
+            } catch (JSONException e) {
+                Log.e(TAG, "Exception caught!", e);
+            }
+        }
+    }
     private class GetBlogPostsTask extends AsyncTask<Object, Void, JSONObject> {
 
         @Override
@@ -107,29 +130,4 @@ public class HomeActivity extends ListActivity {
 
         }
     }
-
-    private void updateList() {
-        if (mBlogData == null) {
-            //TODO: Handle error
-        }
-        else {
-            try {
-                JSONArray jsonPosts = mBlogData.getJSONArray("posts");
-                mBlogPostTitles = new String[jsonPosts.length()];
-                for (int i = 0; i < jsonPosts.length(); i++){
-                    JSONObject post = jsonPosts.getJSONObject(i);
-                    String title = post.getString("title");
-                    title = Html.fromHtml(title).toString();
-                    mBlogPostTitles[i] = title;
-                }
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                        android.R.layout.simple_list_item_1, mBlogPostTitles);
-                setListAdapter(adapter);
-            } catch (JSONException e) {
-                Log.e(TAG, "Exception caught!", e);
-            }
-        }
-    }
-
-
 }
