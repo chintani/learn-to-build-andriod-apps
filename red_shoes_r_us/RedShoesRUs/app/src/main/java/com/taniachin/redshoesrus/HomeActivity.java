@@ -68,18 +68,18 @@ public class HomeActivity extends ListActivity {
         }
         else {
             try {
-               // JSONArray jsonPosts = mBlogData.getJSONArray("posts");
-               // mBlogPostTitles = new String[jsonPosts.length()];
-               // for (int i = 0; i < jsonPosts.length(); i++){
-               //     JSONObject post = jsonPosts.getJSONObject(i);
-               //     String title = post.getString("title");
-              //      title = Html.fromHtml(title).toString();
-               //     mBlogPostTitles[i] = title;
-               // }
-               // ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-               //         android.R.layout.simple_list_item_1, mBlogPostTitles);
-               // setListAdapter(adapter);
-                Log.d(TAG, mBlogData.toString(2));
+                JSONArray jsonPosts = mBlogData.getJSONArray("posts");
+                mBlogPostTitles = new String[jsonPosts.length()];
+                for (int i = 0; i < jsonPosts.length(); i++){
+                    JSONObject post = jsonPosts.getJSONObject(i);
+                    String title = post.getString("title");
+                    title = Html.fromHtml(title).toString();
+                    mBlogPostTitles[i] = title;
+                }
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                        android.R.layout.simple_list_item_1, mBlogPostTitles);
+                setListAdapter(adapter);
+               // Log.d(TAG, mBlogData.toString(2));
             } catch (JSONException e) {
                 Log.e(TAG, "Exception caught!", e);
             }
